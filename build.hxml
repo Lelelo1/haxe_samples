@@ -1,0 +1,11 @@
+
+#--library haxe-c-bridge
+
+--library xa3.csv
+--class-path src
+-main Main
+--resource people.csv@people
+#--cs out
+#-D dll 
+
+--interp
