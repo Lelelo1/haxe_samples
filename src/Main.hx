@@ -15,19 +15,7 @@ class Main {
         println(takePeople(100));
     }
     //@:build(HaxeCBridge.expose())
-    public static function takePeople(count: Int) : Array<String> {
-        // Single line comment
-        //trace("Hello World");
-        /*
-        var content: String = null;
-        var path = "./people.csv";
-        try {
-            content = File.getContent(path);
-        }
-        catch(exc) {
-            println(exc);
-        }
-        */
+    public static function takePeopleFromCSV(count: Int) : Array<String> {
         var name = "people";
         var content = Resource.getString(name);
         if(content == null) {
@@ -47,6 +35,11 @@ class Main {
         
         return people;//peopleList;
     }
+
+    public static function takePeopleFromDatabase(count: Int) {
+        
+    }
+
     // what is '?', why is needed?
     static function handle(map: Map<String, String>): Void {
         
