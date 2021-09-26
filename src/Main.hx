@@ -12,7 +12,7 @@ class Main {
         println(takePeople(100));
     }
 
-    static function takePeople(count: Int) : Array<String> {
+    public static function takePeople(count: Int) : Array<String> {
         // Single line comment
         //trace("Hello World");
         /*
@@ -35,7 +35,7 @@ class Main {
         var csv = Csv.fromString("people", content);
         var lines = csv.lines.splice(0, count);
         var people = lines.map((cell:Map<String, String>) -> cast (cell[fieldName], String));
-
+        
         return people;
     }
     // what is '?', why is needed?
