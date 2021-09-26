@@ -1,0 +1,16 @@
+
+# it was quiet simple..
+
+# all library dependencies
+# --library xa3.csv
+# eg
+
+# -cs bin
+#  -D dll
+
+# noo need to provide headers with dll, for example - consuming the .dll
+
+# Note I am unsure if you can use this directly in c++ project,
+# or just just in C#
+# And possibly it should also be tested on more real devices, and be investigated
+# if the architecture matters and has to be adjusted.

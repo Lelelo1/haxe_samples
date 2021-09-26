@@ -13,6 +13,9 @@
 #ifndef INCLUDED_haxe_Resource
 #include <haxe/Resource.h>
 #endif
+#ifndef INCLUDED_haxe_ds_List
+#include <haxe/ds/List.h>
+#endif
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
@@ -23,8 +26,9 @@
 #include <xa3/QuoteCells.h>
 #endif
 
-HX_LOCAL_STACK_FRAME(_hx_pos_e47a9afac0942eb9_12_main,"Main","main",0xed0e206e,"Main.main","Main.hx",12,0x087e5c05)
-HX_LOCAL_STACK_FRAME(_hx_pos_e47a9afac0942eb9_15_takePeople,"Main","takePeople",0x6485a3eb,"Main.takePeople","Main.hx",15,0x087e5c05)
+HX_LOCAL_STACK_FRAME(_hx_pos_e47a9afac0942eb9_15_main,"Main","main",0xed0e206e,"Main.main","Main.hx",15,0x087e5c05)
+HX_LOCAL_STACK_FRAME(_hx_pos_e47a9afac0942eb9_18_takePeople,"Main","takePeople",0x6485a3eb,"Main.takePeople","Main.hx",18,0x087e5c05)
+HX_LOCAL_STACK_FRAME(_hx_pos_e47a9afac0942eb9_51_handle,"Main","handle",0xe8a7a31d,"Main.handle","Main.hx",51,0x087e5c05)
 
 void Main_obj::__construct() { }
 
@@ -44,43 +48,59 @@ bool Main_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 void Main_obj::main(){
-            	HX_STACKFRAME(&_hx_pos_e47a9afac0942eb9_12_main)
-HXDLIN(  12)		::Sys_obj::println(::Main_obj::takePeople(100));
+            	HX_STACKFRAME(&_hx_pos_e47a9afac0942eb9_15_main)
+HXDLIN(  15)		::Sys_obj::println(::Main_obj::takePeople(100));
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC0(Main_obj,main,(void))
 
 ::Array< ::String > Main_obj::takePeople(int count){
-            	HX_STACKFRAME(&_hx_pos_e47a9afac0942eb9_15_takePeople)
-HXLINE(  28)		::String name = HX_("people",4f,0a,25,39);
-HXLINE(  29)		::String content = ::haxe::Resource_obj::getString(name);
-HXLINE(  30)		if (::hx::IsNull( content )) {
-HXLINE(  31)			::Sys_obj::println((HX_("could not get resource ",dc,fe,10,80) + name));
-HXLINE(  32)			return null();
+            	HX_GC_STACKFRAME(&_hx_pos_e47a9afac0942eb9_18_takePeople)
+HXLINE(  31)		::String name = HX_("people",4f,0a,25,39);
+HXLINE(  32)		::String content = ::haxe::Resource_obj::getString(name);
+HXLINE(  33)		if (::hx::IsNull( content )) {
+HXLINE(  34)			::Sys_obj::println((HX_("could not get resource ",dc,fe,10,80) + name));
+HXLINE(  35)			return null();
             		}
-HXLINE(  34)		::String fieldName = HX_("name",4b,72,ff,48);
-HXLINE(  35)		 ::xa3::Csv csv = ::xa3::Csv_obj::fromString(HX_("people",4f,0a,25,39),content,null(),null());
-HXLINE(  36)		::Array< ::Dynamic> lines = csv->lines->splice(0,count);
-HXLINE(  37)		::Array< ::String > result = ::Array_obj< ::String >::__new(lines->length);
-HXDLIN(  37)		{
-HXLINE(  37)			int _g = 0;
-HXDLIN(  37)			int _g1 = lines->length;
-HXDLIN(  37)			while((_g < _g1)){
-HXLINE(  37)				_g = (_g + 1);
-HXDLIN(  37)				int i = (_g - 1);
-HXDLIN(  37)				{
-HXLINE(  37)					::String inValue = ( ( ::haxe::ds::StringMap)(_hx_array_unsafe_get(lines,i)) )->get_string(fieldName);
-HXDLIN(  37)					result->__unsafe_set(i,inValue);
+HXLINE(  37)		::String fieldName = HX_("name",4b,72,ff,48);
+HXLINE(  38)		 ::xa3::Csv csv = ::xa3::Csv_obj::fromString(HX_("people",4f,0a,25,39),content,null(),null());
+HXLINE(  39)		::Array< ::Dynamic> lines = csv->lines->splice(0,count);
+HXLINE(  40)		::Array< ::String > result = ::Array_obj< ::String >::__new(lines->length);
+HXDLIN(  40)		{
+HXLINE(  40)			int _g = 0;
+HXDLIN(  40)			int _g1 = lines->length;
+HXDLIN(  40)			while((_g < _g1)){
+HXLINE(  40)				_g = (_g + 1);
+HXDLIN(  40)				int i = (_g - 1);
+HXDLIN(  40)				{
+HXLINE(  40)					::String inValue = ( ( ::haxe::ds::StringMap)(_hx_array_unsafe_get(lines,i)) )->get_string(fieldName);
+HXDLIN(  40)					result->__unsafe_set(i,inValue);
             				}
             			}
             		}
-HXDLIN(  37)		::Array< ::String > people = result;
-HXLINE(  39)		return people;
+HXDLIN(  40)		::Array< ::String > people = result;
+HXLINE(  41)		 ::haxe::ds::List peopleList =  ::haxe::ds::List_obj::__alloc( HX_CTX );
+HXLINE(  42)		{
+HXLINE(  42)			int _g2 = 0;
+HXDLIN(  42)			while((_g2 < people->length)){
+HXLINE(  42)				::String p = people->__get(_g2);
+HXDLIN(  42)				_g2 = (_g2 + 1);
+HXLINE(  43)				peopleList->add(p);
+            			}
+            		}
+HXLINE(  48)		return people;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Main_obj,takePeople,return )
+
+void Main_obj::handle( ::haxe::ds::StringMap map){
+            	HX_STACKFRAME(&_hx_pos_e47a9afac0942eb9_51_handle)
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(Main_obj,handle,(void))
 
 
 Main_obj::Main_obj()
@@ -92,6 +112,9 @@ bool Main_obj::__GetStatic(const ::String &inName, Dynamic &outValue, ::hx::Prop
 	switch(inName.length) {
 	case 4:
 		if (HX_FIELD_EQ(inName,"main") ) { outValue = main_dyn(); return true; }
+		break;
+	case 6:
+		if (HX_FIELD_EQ(inName,"handle") ) { outValue = handle_dyn(); return true; }
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"takePeople") ) { outValue = takePeople_dyn(); return true; }
@@ -109,6 +132,7 @@ static ::hx::StaticInfo *Main_obj_sStaticStorageInfo = 0;
 static ::String Main_obj_sStaticFields[] = {
 	HX_("main",39,38,56,48),
 	HX_("takePeople",f6,25,fe,cc),
+	HX_("handle",a8,83,fd,b7),
 	::String(null())
 };
 

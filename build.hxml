@@ -1,15 +1,9 @@
-
-#--library haxe-c-bridge
+# windows cpp
 --library hxcpp:git:https://github.com/HaxeFoundation/hxcpp.git
 --library xa3.csv
 --class-path src
 -main Main
 --resource people.csv@people
-#--cs out
---dce full
--D watchos
--D static_link
--cpp bin 
+-D dll_link
+--cpp bin
 
-
-#--interp

@@ -13,6 +13,12 @@
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
+#ifndef INCLUDED_haxe_ds__List_ListNode
+#include <haxe/ds/_List/ListNode.h>
+#endif
+#ifndef INCLUDED_haxe_ds_List
+#include <haxe/ds/List.h>
+#endif
 #ifndef INCLUDED_haxe_Resource
 #include <haxe/Resource.h>
 #endif
@@ -31,6 +37,9 @@
 #ifndef INCLUDED_Main
 #include <Main.h>
 #endif
+#ifndef INCLUDED_Lambda
+#include <Lambda.h>
+#endif
 
 void __files__boot();
 
@@ -42,12 +51,16 @@ __files__boot();
 ::xa3::Csv_obj::__register();
 ::haxe::iterators::ArrayIterator_obj::__register();
 ::haxe::ds::StringMap_obj::__register();
+::haxe::ds::_List::ListNode_obj::__register();
+::haxe::ds::List_obj::__register();
 ::haxe::Resource_obj::__register();
 ::haxe::IMap_obj::__register();
 ::Sys_obj::__register();
 ::StringTools_obj::__register();
 ::Std_obj::__register();
 ::Main_obj::__register();
+::Lambda_obj::__register();
 ::xa3::QuoteCells_obj::__boot();
+::xa3::Csv_obj::__boot();
 }
 

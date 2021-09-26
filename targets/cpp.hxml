@@ -1,0 +1,11 @@
+# windows cpp
+--library hxcpp:git:https://github.com/HaxeFoundation/hxcpp.git
+--library xa3.csv
+--class-path src
+-main Main
+--resource people.csv@people
+-D dll
+--cpp bin
+
+# you end up needing to write externs either way, in each of the targets
+# https://docs.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp?view=msvc-160

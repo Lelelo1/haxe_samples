@@ -3,6 +3,8 @@
 <files id="haxe">
 <compilerflag value="-Iinclude"/>
   <file name="src/xa3/Csv.cpp" >
+   <depend name="include/Lambda.h"/>
+   <depend name="include/Std.h"/>
    <depend name="include/StringTools.h"/>
    <depend name="include/haxe/IMap.h"/>
    <depend name="include/haxe/ds/StringMap.h"/>
@@ -19,6 +21,13 @@
    <depend name="include/haxe/IMap.h"/>
    <depend name="include/haxe/ds/StringMap.h"/>
    <depend name="include/haxe/iterators/ArrayIterator.h"/>
+  </file>
+  <file name="src/haxe/ds/_List/ListNode.cpp" >
+   <depend name="include/haxe/ds/_List/ListNode.h"/>
+  </file>
+  <file name="src/haxe/ds/List.cpp" >
+   <depend name="include/haxe/ds/List.h"/>
+   <depend name="include/haxe/ds/_List/ListNode.h"/>
   </file>
   <file name="src/haxe/Resource.cpp" >
    <depend name="include/haxe/Resource.h"/>
@@ -40,12 +49,17 @@
    <depend name="include/Sys.h"/>
    <depend name="include/haxe/IMap.h"/>
    <depend name="include/haxe/Resource.h"/>
+   <depend name="include/haxe/ds/List.h"/>
    <depend name="include/haxe/ds/StringMap.h"/>
    <depend name="include/xa3/Csv.h"/>
    <depend name="include/xa3/QuoteCells.h"/>
   </file>
+  <file name="src/Lambda.cpp" >
+   <depend name="include/Lambda.h"/>
+  </file>
   <file name="src/__boot__.cpp" >
    <depend name="include/xa3/QuoteCells.h"/>
+   <depend name="include/xa3/Csv.h"/>
   </file>
   <file name="src/__files__.cpp" if='HXCPP_DEBUGGER'>
   </file>

@@ -47,17 +47,29 @@ class HXCPP_CLASS_ATTRIBUTES Csv_obj : public ::hx::Object
 		bool _hx_isInstanceOf(int inClassId);
 		::String __ToString() const { return HX_("Csv",a6,3b,33,00); }
 
+		static void __boot();
+		static ::String CHARCODE_NEWLINE;
+		static ::String CR;
 		static  ::xa3::Csv fromString(::String name,::String content, ::xa3::QuoteCells quoteCells,::String inputDelimiter);
 		static ::Dynamic fromString_dyn();
 
 		static  ::xa3::Csv fromColumnAndStringArrays(::String name,::Array< ::String > columnNames,::Array< ::Dynamic> decodedLines,::String inputDelimiter);
 		static ::Dynamic fromColumnAndStringArrays_dyn();
 
+		static  ::xa3::Csv fromCsvRecords(::Array< ::Dynamic> records,::String name,::hx::Null< bool >  trimCells);
+		static ::Dynamic fromCsvRecords_dyn();
+
+		static ::Array< ::Dynamic> fromFiles( ::haxe::ds::StringMap files);
+		static ::Dynamic fromFiles_dyn();
+
 		static ::Array< ::Dynamic> filterEmptyLines(::Array< ::Dynamic> lines);
 		static ::Dynamic filterEmptyLines_dyn();
 
 		static ::Array< ::Dynamic> decode(::String s, ::xa3::QuoteCells quoteCells,::String delimiter,::hx::Null< bool >  trimCells);
 		static ::Dynamic decode_dyn();
+
+		static ::String encode(::Array< ::Dynamic> a,::String delimiter);
+		static ::Dynamic encode_dyn();
 
 		static ::String detectDelimiter(::String s);
 		static ::Dynamic detectDelimiter_dyn();
@@ -66,6 +78,9 @@ class HXCPP_CLASS_ATTRIBUTES Csv_obj : public ::hx::Object
 		::Array< ::String > columnNames;
 		 ::haxe::ds::StringMap columnMap;
 		::Array< ::Dynamic> lines;
+		virtual ::String toString();
+		::Dynamic toString_dyn();
+
 };
 
 } // end namespace xa3

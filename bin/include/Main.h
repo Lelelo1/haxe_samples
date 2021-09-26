@@ -7,6 +7,8 @@
 #endif
 
 HX_DECLARE_CLASS0(Main)
+HX_DECLARE_CLASS1(haxe,IMap)
+HX_DECLARE_CLASS2(haxe,ds,StringMap)
 
 
 
@@ -54,6 +56,9 @@ class HXCPP_CLASS_ATTRIBUTES Main_obj : public ::hx::Object
 
 		static ::Array< ::String > takePeople(int count);
 		static ::Dynamic takePeople_dyn();
+
+		static void handle( ::haxe::ds::StringMap map);
+		static ::Dynamic handle_dyn();
 
 };
 
