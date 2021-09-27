@@ -1,0 +1,6 @@
+
+--class-path src
+-main Main
+--resource people.csv@people
+
+--interp

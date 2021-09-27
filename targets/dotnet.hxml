@@ -14,3 +14,10 @@
 # or just just in C#
 # And possibly it should also be tested on more real devices, and be investigated
 # if the architecture matters and has to be adjusted.
+
+--class-path src
+-main Main
+#--resource people.csv@people
+--resource peopleDatabase.db@peopleDatabase
+--cs bin
+-D dll
