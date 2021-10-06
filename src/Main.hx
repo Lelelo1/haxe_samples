@@ -1,5 +1,5 @@
 
-import sys.db.Sqlite;
+//import sys.db.Sqlite;
 import models.People.Person;
 import haxe.Resource;
 import xa3.Csv;
@@ -11,9 +11,10 @@ import Sys.*;
 class Main {
 
     public static function main(): Void {
-        //println(takePeopleFromCSV(100));
-        println(takePeopleFromDatabase(80));
+        println(takePeopleFromCSV(100));
+        //println(takePeopleFromDatabase(80));
     }
+    
     public static function takePeopleFromCSV(count: Int) : String {
         var name = "people";
         var content = Resource.getString(name);
@@ -32,6 +33,7 @@ class Main {
         return people[10].name;//peopleList;
     }
 
+/*
     public static function takePeopleFromDatabase(count: Int): Array<Person> {
         var name = "peopleDatabase";
         var content = Resource.getString(name);
@@ -48,7 +50,7 @@ class Main {
         }
         return takeResults;
     }
-
+    */
     // what is '?', why is needed?
     static function handle(map: Map<String, String>): Void {
         

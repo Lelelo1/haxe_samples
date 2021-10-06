@@ -2,6 +2,7 @@ package models;
 
 //typedef Person = {name: String, age: Int};
 
+#if cs
 class Person {
     public var name: String;
     public var age: Int;    
@@ -11,5 +12,8 @@ class Person {
         this.age = age;
     }
 }
+#else
+#end
+
 
 
