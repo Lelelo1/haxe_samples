@@ -1,36 +1,53 @@
 
 //import sys.db.Sqlite;
-import models.People.Person;
+//import models.Person.Person; // use haxe class
+
+
+
+//import src.models.Person;
+
+import src.models.Person;
+
 import haxe.Resource;
-import xa3.Csv;
+//import xa3.Csv;
 import haxe.io.Bytes;
 import sys.io.File;
 import haxe.io.BytesInput;
 import Sys.*;
+
+
+// haxe-cbrige Main.hx
+import cpp.Callable;
+
 //@:build(HaxeCBridge.expose())
+//@:include("./models/Person.h")
 class Main {
 
     public static function main(): Void {
-        println(takePeopleFromCSV(100));
+        //println(takePeopleFromCSV(100));
         //println(takePeopleFromDatabase(80));
     }
     
-    public static function takePeopleFromCSV(count: Int) : String {
+    public static function takePeopleFromCSV(count: Int) : Array<Person> {
         var name = "people";
         var content = Resource.getString(name);
+        
         if(content == null) {
             println("could not get resource " + name);
             return null;
         }
+
 // typedef void* HaxeObject;
         var fieldName = "name";
         var csv = Csv.fromString("people", content);
         var lines = csv.lines.splice(0, count);
-        var people = lines.map((cell:Map<String, String>) -> cast (cell[fieldName], String)).map((n) -> new Person(n, 23));
+        var names = lines.map((cell:Map<String, String>) -> cast (cell[fieldName], String));
+        var people = names.map((n) -> new Person(name, 27));
         // {name: "Andy", age: 45}
+        
+     
 
-
-        return people[10].name;//peopleList;
+        return people;//peopleList;
     }
 
 /*

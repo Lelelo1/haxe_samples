@@ -1,6 +1,25 @@
 
+# should potentially name C target, but I am personally using it for Swift based
+# projects
+
+--library haxe-c-bridge
+--library hxcpp:git:https://github.com/haxiomic/hxcpp#patch-3
+--library xa3.csv
 --class-path src
 -main Main
 --resource people.csv@people
+#--cs out
+#-dce full
+#-D watchos
+#-D static_link
+-D dll
+-cpp bin 
 
---interp
+
+#--interp
+
+# It seems like you manually have to setup headers, unless using haxiomanic's
+# haxe-c-bridge
+
+
+
