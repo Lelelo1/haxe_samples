@@ -1,0 +1,8 @@
+
+#note that it is possible to call with terminal and use cli:s in here with -cmd and suh in here
+
+--library xa3.csv
+--class-path src
+-main Main
+
+--interp

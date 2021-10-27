@@ -6,10 +6,10 @@
 
 //import src.models.Person;
 
-import src.models.Person;
+import models.Person;
 
 import haxe.Resource;
-//import xa3.Csv;
+import xa3.Csv;
 import haxe.io.Bytes;
 import sys.io.File;
 import haxe.io.BytesInput;
@@ -26,6 +26,9 @@ class Main {
     public static function main(): Void {
         //println(takePeopleFromCSV(100));
         //println(takePeopleFromDatabase(80));
+        
+        //DatabaseTest.print();
+        println("inside haxe");
     }
     
     public static function takePeopleFromCSV(count: Int) : Array<Person> {

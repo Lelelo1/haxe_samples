@@ -1,5 +1,5 @@
-# windows cpp
---library hxcpp:git:https://github.com/HaxeFoundation/hxcpp.git
+
+
 --library xa3.csv
 --class-path src
 -main Main
@@ -9,8 +9,8 @@
 --cs bin
 -D dll
 
-# sqlite no supported with interp
-#--interp
+-cmd cd bin/src
 
-# you end up needing to write externs either way, in each of the targets
-# https://docs.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp?view=msvc-160
+-cmd dotnet new console
+-cmd rm Program.cs
+-cmd dotnet run Main.cs

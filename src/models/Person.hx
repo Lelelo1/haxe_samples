@@ -1,4 +1,4 @@
-package src.models;
+package models;
 
 //typedef Person = {name: String, age: Int};
 

@@ -1,12 +1,10 @@
 
 import sys.db.Sqlite;
 import sys.db.*;
-import sys.*;
-
-package src;
+import Sys.*;
 
 class DatabaseTest {
-    public static function Print(): Void {
+    public static function print(): Void {
         var connection = Sqlite.open("");
         var set = connection.request("*");
         var list = set.results();

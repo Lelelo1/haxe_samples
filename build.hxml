@@ -1,3 +1,16 @@
 
-#note that it is possible to call with terminal and use cli:s in here with -cmd and suh in here
 
+--library xa3.csv
+--class-path src
+-main Main
+#--resource people.csv@people
+--resource peopleDatabase.db@peopleDatabase
+
+--cs bin
+-D dll
+
+-cmd cd bin/src
+
+-cmd dotnet new console
+-cmd rm Program.cs
+-cmd dotnet run Main.cs
